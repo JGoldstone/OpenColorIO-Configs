@@ -591,7 +591,9 @@ def apply_CTL_to_image(input_image,
 
         if aces_ctl_directory is not None:
             if os.path.split(aces_ctl_directory)[1] != 'utilities':
-                ctl_module_path = os.path.join(aces_ctl_directory, 'utilities')
+                ctl_module_path = "%s:%s" % (
+                    os.path.join(aces_ctl_directory, 'utilities'),
+                    os.path.join(aces_ctl_directory, 'lib'))
             else:
                 ctl_module_path = aces_ctl_directory
             ctlenv['CTL_MODULE_PATH'] = ctl_module_path

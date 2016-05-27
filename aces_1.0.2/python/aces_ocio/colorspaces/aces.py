@@ -556,7 +556,7 @@ def create_generic_log(aces_ctl_directory,
     ctls = [os.path.join(
         aces_ctl_directory,
         'utilities',
-        'ACESlib.Log2_to_Lin_param.a1.0.1.ctl')]
+        'ACESutil.Log2_to_Lin_param.a1.0.1.ctl')]
     lut = '%s_to_linear.spi1d' % name
 
     lut = sanitize(lut)
@@ -643,7 +643,7 @@ def create_Dolby_PQ(aces_ctl_directory,
     ctls = [os.path.join(
         aces_ctl_directory,
         'utilities',
-        'ACESlib.DolbyPQ_to_Lin.a1.0.1.ctl')]
+        'ACESutil.DolbyPQ_to_Lin.a1.0.1.ctl')]
     lut = '%s_to_linear.spi1d' % name
 
     lut = sanitize(lut)
@@ -738,7 +738,7 @@ def create_Dolby_PQ_shaper(aces_ctl_directory,
     ctls = [os.path.join(
         aces_ctl_directory,
         'utilities',
-        'ACESlib.OCIOshaper_to_Lin_param.a1.0.1.ctl')]
+        'ACESutil.OCIOshaper_to_Lin_param.a1.0.1.ctl')]
     lut = '%s_to_linear.spi1d' % name
 
     lut = sanitize(lut)
@@ -975,10 +975,10 @@ def create_LMTs(aces_ctl_directory,
         lmt_shaper_name,
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Log2_to_Lin_param.a1.0.1.ctl'),
+                     'ACESutil.Log2_to_Lin_param.a1.0.1.ctl'),
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Lin_to_Log2_param.a1.0.1.ctl'),
+                     'ACESutil.Lin_to_Log2_param.a1.0.1.ctl'),
         shaper_input_scale_generic_log2,
         lmt_params]
 
@@ -1248,10 +1248,10 @@ def create_shapers_log2(aces_ctl_directory,
         log2_shaper_name,
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Log2_to_Lin_param.a1.0.1.ctl'),
+                     'ACESutil.Log2_to_Lin_param.a1.0.1.ctl'),
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Lin_to_Log2_param.a1.0.1.ctl'),
+                     'ACESutil.Lin_to_Log2_param.a1.0.1.ctl'),
         shaper_input_scale_generic_log2,
         log2_params]
 
@@ -1350,10 +1350,10 @@ def create_shapers_dolbypq(aces_ctl_directory,
         dolby_pq_shaper_name,
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.OCIOshaper_to_Lin_param.a1.0.1.ctl'),
+                     'ACESutil.OCIOshaper_to_Lin_param.a1.0.1.ctl'),
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Lin_to_OCIOshaper_param.a1.0.1.ctl'),
+                     'ACESutil.Lin_to_OCIOshaper_param.a1.0.1.ctl'),
         1.0,
         dolby_pq_params]
 
@@ -1492,10 +1492,10 @@ def create_shapers(aces_ctl_directory,
         dolby_pq_shaper_name,
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.DolbyPQ_to_Lin.a1.0.1.ctl'),
+                     'ACESutil.DolbyPQ_to_Lin.a1.0.1.ctl'),
         os.path.join('%s',
                      'utilities',
-                     'ACESlib.Lin_to_DolbyPQ.a1.0.1.ctl'),
+                     'ACESutil.Lin_to_DolbyPQ.a1.0.1.ctl'),
         1.0,
         {}]
 
@@ -1972,7 +1972,7 @@ def create_colorspaces(aces_ctl_directory,
     colorspaces.extend(odts)
 
     # TODO: Investigate if there is a way to retrieve these values from *CTL*.
-    default_display = 'sRGB (D60 sim.)'
+    default_display = 'sRGB'
     color_picking = 'Rec.709'
 
     roles = {'color_picking': color_picking,
